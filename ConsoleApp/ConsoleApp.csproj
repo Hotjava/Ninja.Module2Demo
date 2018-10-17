@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8138AC14-DD64-4818-9064-63A8565699C6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NinjaDomain.DataModel</RootNamespace>
-    <AssemblyName>NinjaDomain.DataModel</AssemblyName>
+    <ProjectGuid>{C09ACA87-F9DB-4203-A209-2DC20DD7893A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp</RootNamespace>
+    <AssemblyName>ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,26 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201810161028197_InititalMigration.cs" />
-    <Compile Include="Migrations\201810161028197_InititalMigration.Designer.cs">
-      <DependentUpon>201810161028197_InititalMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810161451016_addColumnName.cs" />
-    <Compile Include="Migrations\201810161451016_addColumnName.Designer.cs">
-      <DependentUpon>201810161451016_addColumnName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810161512509_makeNullable.cs" />
-    <Compile Include="Migrations\201810161512509_makeNullable.Designer.cs">
-      <DependentUpon>201810161512509_makeNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="NinjaContext.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -74,17 +61,10 @@
       <Project>{020DA13D-F8FF-4FA9-AB89-77C286091305}</Project>
       <Name>NinjaDomain.Classes</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810161028197_InititalMigration.resx">
-      <DependentUpon>201810161028197_InititalMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810161451016_addColumnName.resx">
-      <DependentUpon>201810161451016_addColumnName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810161512509_makeNullable.resx">
-      <DependentUpon>201810161512509_makeNullable.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\NinjaDomain.DataModel\NinjaDomain.DataModel.csproj">
+      <Project>{8138AC14-DD64-4818-9064-63A8565699C6}</Project>
+      <Name>NinjaDomain.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
